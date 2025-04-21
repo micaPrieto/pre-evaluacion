@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { DespedidaComponent } from './pages/despedida/despedida.component';
-import { SaludoComponent } from './pages/saludo/saludo.component';
+import { SaludoComponent } from './pages/saludo-page/saludo-page.component';
+import { DespedidaComponent } from './pages/despedida-page/despedida-page.component';
 
 export const routes: Routes = [
   {

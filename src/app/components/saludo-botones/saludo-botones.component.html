@@ -1,15 +1,16 @@
 
 <div class = 'botones'>
 
-  <ng-container *ngIf="mostrarSaludo; else soloBotonMostrar">
+  <ng-container *ngIf="mostrarSaludo">
     <button (click)="cambiarColor('rojo')"> Saludo en ROJO</button>
     <button (click)="cambiarColor('verde')"> Saludo en VERDE</button>
     <button (click)="invertirEstadoSaludo()" > Borrar saludo</button>
     <button  (click)="despedirse()" > Despedirse</button>
   </ng-container>
 
+  <!-- Ex boton "Mostrar Saludo"
   <ng-template #soloBotonMostrar>
     <button (click)="invertirEstadoSaludo()">Mostrar Saludo</button>
-  </ng-template>
+  </ng-template> -->
 
 </div>

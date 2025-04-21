@@ -1,0 +1,42 @@
+
+<div class = 'contenedor'>
+
+  <ng-container *ngIf="nombre !== '' ; else inputNombre" >
+
+    <app-saludo-texto
+      [mostrarSaludo]="mostrarSaludo"
+      [colorSaludo]="colorSaludo"
+      [nombre]="nombre | mayuscula"
+    ></app-saludo-texto>
+
+    <app-saludo-botones
+      [mostrarSaludo]="mostrarSaludo"
+      (mostrarSaludoChange)="mostrarSaludo = $event"
+
+      [colorSaludo]="colorSaludo"
+      (colorSaludoChange)="colorSaludo=$event"
+
+      [nombre]="nombre | mayuscula"
+      (nombreChange)="nombre = $event"
+    > </app-saludo-botones>
+
+  </ng-container>
+
+  <!-- else: Input -->
+  <ng-template #inputNombre>
+      <app-saludo-input-nombre
+      (nombreAEmitir)="nombre = $event; mostrarSaludo = true; colorSaludo = '' "
+      ></app-saludo-input-nombre>
+  </ng-template>
+
+
+</div>
+
+
+<ng-container *ngIf="mostrarSaludo; else imagenSinSaludo">
+  <img src="/saludo.png" alt="Saludo animado" class="imagen-saludo" />
+</ng-container>
+
+<ng-template #imagenSinSaludo>
+  <img src="/noSaludo.png" alt="Chica confundida" class="imagen-saludo" />
+</ng-template>
