@@ -5,8 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-saludo-botones',
   imports: [CommonModule],
-  templateUrl: './saludo-botones.component.html',
-  styleUrl: './saludo-botones.component.css'
+  templateUrl: './saludo-botones.component.html'
 })
 export class SaludoBotonesComponent {
   constructor( private router: Router){}
@@ -27,6 +26,7 @@ export class SaludoBotonesComponent {
 
   invertirEstadoSaludo() {
 
+    this.nombreChange.emit('');
     this.mostrarSaludoChange.emit(!this.mostrarSaludo);
   }
 

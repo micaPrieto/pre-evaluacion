@@ -4,11 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-despedida',
   imports: [],
-  templateUrl: './despedida.component.html',
-  styleUrl: './despedida.component.css'
+  templateUrl: './despedida-page.component.html'
 })
 export class DespedidaComponent {
-
 
       router = inject(Router);
 
@@ -17,11 +15,8 @@ export class DespedidaComponent {
           this.nombre = params['nombre'];
       })
 
-
       saludar()
       {
         this.router.navigate(['/saludo']);
       }
-
-
 }
