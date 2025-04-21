@@ -2,44 +2,30 @@ import { CommonModule, NgClass } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SaludoBotonesComponent } from "./saludo-botones/saludo-botones.component";
+import { SaludoTextoComponent } from "./saludo-texto/saludo-texto.component";
+import { mayusculaPipe } from '../../pipes/upper-case.pipe';
+
 
 @Component({
   selector: 'app-saludo',
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    SaludoBotonesComponent,
+    SaludoTextoComponent,
+    mayusculaPipe
+  ],
   templateUrl: './saludo.component.html',
   styleUrl: './saludo.component.css'
 })
 export class SaludoComponent {
 
-  constructor(private router : Router) {}
-
-
   nombre :string = 'Micaela';
   mostrarSaludo :boolean = true;
   colorSaludo:string = ''
 
-
-
-  cambiarColor(color: string) {
-    this.colorSaludo = color;
-  }
-
-
-  invertirEstadoSaludo() {
-    if(this.mostrarSaludo){
-        this.mostrarSaludo = false;
-    }
-    else {
-      this.mostrarSaludo = true;
-    }
-  }
-
-  despedirse()
+  mostrarValorSaludo ()
   {
-    this.router.navigate(['/despedida', this.nombre]);
+    console.log(this.mostrarSaludo);
   }
-
-
-
-
 }
