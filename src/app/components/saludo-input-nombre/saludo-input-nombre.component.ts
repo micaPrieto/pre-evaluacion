@@ -8,21 +8,19 @@ import { FormsModule } from '@angular/forms';
 })
 export class SaludoInputNombreComponent {
 
-
   @Output()
   nombreAEmitir: EventEmitter<string>= new EventEmitter()
 
-  nombre:string = '';
+  nombreIngresado:string = '';
   mensajeDeError: string = '';
 
   emitirNombre(){
-    if(this.nombre !== '' ){
-        this.nombreAEmitir.emit(this.nombre)
+    if(this.nombreIngresado !== '' ){
+        this.nombreAEmitir.emit(this.nombreIngresado)
       }
     else {
         this.mensajeDeError = 'Debe ingresar un nombre'
     }
-
   }
 
 }

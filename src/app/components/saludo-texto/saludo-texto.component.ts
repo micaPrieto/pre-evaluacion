@@ -9,7 +9,6 @@ import { Component, input } from '@angular/core';
 })
 export class SaludoTextoComponent {
 
-  mostrarSaludo = input.required<boolean>();
   colorSaludo = input.required<string>();
   nombre = input.required<string>();
 
