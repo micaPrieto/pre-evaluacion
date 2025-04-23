@@ -1,0 +1,10 @@
+
+<div>
+  <ng-container *ngIf="mostrarSaludo; else imagenSinSaludo">
+    <img src="/saludo.png" alt="Saludo animado" class="imagen-saludo" />
+  </ng-container>
+
+  <ng-template #imagenSinSaludo>
+    <img src="/noSaludo.png" alt="Chica confundida" class="imagen-saludo" />
+  </ng-template>
+</div>

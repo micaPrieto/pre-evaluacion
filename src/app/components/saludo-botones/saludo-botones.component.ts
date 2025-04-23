@@ -10,30 +10,24 @@ import { Router } from '@angular/router';
 export class SaludoBotonesComponent {
   constructor( private router: Router){}
 
-  @Input() mostrarSaludo = true;
-  @Input() colorSaludo = '';
   @Input() nombre = '';
 
-  @Output() mostrarSaludoChange = new EventEmitter<boolean>();
   @Output() colorSaludoChange = new EventEmitter<string>();
+  @Output() mostrarSaludoFalse = new EventEmitter<boolean>();
   @Output() nombreChange = new EventEmitter<string>();
 
-  cambiarColor(color: string) {
 
+  cambiarColor(color: string) {
     this.colorSaludoChange.emit(color);
   }
 
-
   invertirEstadoSaludo() {
-
-    this.nombreChange.emit('');
-    this.mostrarSaludoChange.emit(!this.mostrarSaludo);
+    this.mostrarSaludoFalse.emit(false);
   }
 
-  despedirse()
-  {
+  despedirse() {
+    this.nombreChange.emit('');
     this.router.navigate(['/despedida', this.nombre]);
   }
-
 
 }

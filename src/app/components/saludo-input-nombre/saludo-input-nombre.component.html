@@ -1,8 +1,16 @@
 
 <h3 class = 'titulo'>Cual es tu nombre?</h3>
+
 <form  class="formulario">
 
-  <input type="text" placeholder="Nombre"  [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}" >
+  <input
+    type="text"
+    placeholder="Nombre"
+    [(ngModel)]="nombreIngresado"
+    [ngModelOptions]="{standalone: true}"
+    >
   <button (click)="emitirNombre()">Enviar</button>
+
 </form>
+
 <p style="color: red;">{{mensajeDeError}}</p>
