@@ -1,12 +1,14 @@
 
 <div class = 'contenedor'>
 
-  <h2 class = 'titulo '>Adiós, {{nombre}} ! </h2>
+  <h2 class = 'titulo '>Adiós, {{nombreRecibidoPorURL}} ! </h2>
 
   <div class = 'botones'>
-    <button (click)="saludar()">Volver</button>
+    <button (click)="volverASaludo()">Volver</button>
   </div>
 
 </div>
 
-<img src="/saludo.png" alt="Saludo animado" class="imagen-saludo" />
+
+ <app-saludo-imagen [mostrarSaludo]="true"  ></app-saludo-imagen>
+
